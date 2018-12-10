@@ -1,14 +1,5 @@
-(old)
+# LHE (FPGA edition) transmitter/receiver and player
 
-Si el fichero no tiene en la cabecera LHE el campo 1st block ID, hay dos opciones:
+## Description
 
-1. Compilar el programa con NOT_FIRST_BLOCK_ID definido a 1, por ejemplo con
-
-    make CEXTRAFLAGS=-DNOT_FIRST_BLOCK_ID
-
-2. Ejecutar el programa add_first_block_id 
-
-    # compilar el programa
-    make add_first_block_id.out
-    # ejecutarlo
-    ./add_first_block_id.out original original_fixed
+This project provides an implementation of a transmitter/receiver and player for [Logarithmical hopping encoding (LHE)](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7166450 "LHE @ IET Image Processing"). This implementation has been developed at HPCN-UAM, in the context of the [Racing Drones project](http://www.hpcn-uam.es/project/racing-drones/ "Racing Drones @ HPCN-UAM"). Current version is compatible with the [FPGA-powered LHE implementation](https://ieeexplore.ieee.org/document/8533522).
