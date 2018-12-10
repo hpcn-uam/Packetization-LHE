@@ -1,0 +1,18 @@
+\documentclass[border=5pt,png]{standalone}
+\usepackage{bytefield}
+
+
+\begin{document}
+
+\begin{bytefield}[bitwidth=1.1em]{32}
+    \bitheader{0-31} \\
+        \bitbox{2}{V=0} & \bitbox{1}{A} & \bitbox{1}{D} & \bitbox{4}{Profile}
+        & \bitbox{2}{R}
+        & \bitbox{6}{\# Blocks} & \bitbox{8}{BH}%{block height px /2}
+        & \bitbox{8}{BW} \\ %\bitbox{8}{block width px /2} \\
+        %\bitbox{16}{img height in blocks} & \bitbox{16}{img width in blocks} \\
+        \bitbox{16}{IH} & \bitbox{16}{IW} \\
+        \bitbox{16}{1\textsuperscript{st} Block id.} & \bitbox{16}{Payload}
+\end{bytefield}
+
+\end{document}

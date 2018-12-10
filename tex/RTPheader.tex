@@ -1,0 +1,16 @@
+\documentclass[border=5pt,png]{standalone}
+\usepackage{bytefield}
+
+
+\begin{document}
+
+\begin{bytefield}[bitwidth=1.1em]{32}
+    \bitheader{0-31} \\
+        \bitbox{2}{V=2} & \bitbox{1}{P} & \bitbox{1}{X}
+        & \bitbox{4}{CC} & \bitbox{1}{M} & \bitbox{7}{PT}
+        & \bitbox{16}{sequence number} \\
+        \bitbox{32}{timestamp} \\
+    \bitbox{32}{synchronization source (SSRC) identifier}
+\end{bytefield}
+
+\end{document}

@@ -1,0 +1,13 @@
+\documentclass[border=5pt,png]{standalone}
+\usepackage{bytefield}
+
+
+\begin{document}
+
+\begin{bytefield}[bitwidth=1.5em]{16}
+    \bitheader{0-15} \\
+    \bitbox{3}{Type} & \bitbox{13}{Block Length (bytes)}\\
+    \bitbox{16}{Data}
+\end{bytefield}
+
+\end{document}
