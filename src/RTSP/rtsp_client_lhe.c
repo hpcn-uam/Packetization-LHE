@@ -26,7 +26,7 @@ static int cseq = 0;
 static struct sockaddr_in rtsp_serv_addr,rtsp_cli_addr;
 static int rtp_socket;
 static int sockfd;
-static int state;
+static int state = CLIENT_STATE_INIT;
 static char session[10]; //warning!
 static int ssrc = 0;
 static uint16_t rtp_client_port_lo = 0;
@@ -57,6 +57,7 @@ static void error(const char *msg){
 static void sigint_handler(int signo){
 	(void)signo; // ignore warning
 
+  rtsp_request_teardown();
 	close(sockfd);
 	if(state == CLIENT_STATE_PLAYING){
 		stop_receiver();
@@ -370,7 +371,8 @@ void open_player(){
 
 void rtsp_request_teardown(){
 	//printf("Requesting [TEARDOWN]...\n");//debug
-
+  if (state==CLIENT_STATE_INIT) return;
+  
 	char body[LENGTH];
 	bzero(body,LENGTH);
 
